@@ -1,0 +1,310 @@
+
+/* 
+    Rems created bugs in the past in some browsers when put inside the 
+    media queries - use ems instead
+*/
+
+/************************/
+/* BELOW 1344px (Smaller desktops) */
+/************************/
+
+@media (max-width: 84em) {
+    .section-hero__container {
+        max-width: 120rem;
+    }
+
+    .heading-primary {
+        font-size: 4.4rem;
+    }
+
+    .section-testimonials__gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/************************/
+/* BELOW 1200px (Landscape tablets) */
+/************************/
+
+@media (max-width: 75em) {
+    html {
+        /* rem = 9px */
+        font-size: 56.25%;
+    }
+    
+    .heading-secondary {
+        font-size: 3.6rem;
+    }
+    
+    .heading-tertiary {
+        font-size: 2.4rem;
+    }
+
+    .grid {
+        column-gap: 4.8rem;
+        row-gap: 6.4rem;
+    }
+    
+    .header {
+        padding: 0 3.2rem;
+    }
+    
+    .header__nav-list {
+        gap: 3.2rem;
+    }
+    
+    .section-hero__container {
+        gap: 4.8rem;
+    }
+    
+    .section-testimonials__container {
+        padding: 9.6rem 3.2rem;
+    }
+}
+
+/************************/
+/* BELOW 944px (Tablets) */
+/************************/
+
+@media (max-width: 59em) {
+    html {
+        font-size: 50%;
+    }
+
+    .button--form {
+        margin-top: 1rem;
+    }
+
+    .section-hero__container {
+        padding: 0 8rem;
+
+        gap: 6.4rem;
+        grid-template-columns: 1fr;
+    }
+
+    .section-hero__text-box,
+    .section-hero__image-box {
+        text-align: center;
+    }
+
+    .section-hero__customers {
+        margin-top: 3.2rem;
+
+        justify-content: center;
+    }
+
+    .section-hero__image {
+        width: 60%;
+    }
+
+    .section-featured__logos img {
+        height: 2.4rem;
+    }
+
+    .section-how__number {
+        font-size: 7.4rem;
+    }
+
+    .section-meals__text {
+        padding: 2.4rem 3.2rem 3.2rem;
+    }
+
+    .section-testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .section-testimonials__gallery {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .section-call-to-action__container {
+        grid-template-columns: 3fr 2fr;
+    }
+
+    .section-call-to-action__form {
+        grid-template-columns: 1fr;
+    }
+
+    /* MOBILE NAVIGATION */
+
+    html, 
+    body {
+        overflow-x: hidden;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header__nav {
+        background-color: rgba(255, 255, 255, .97);
+        height: 100vh;
+        width: 100%;
+
+        /* Hide the nav from the user's utilities: tab focus and screen reader */
+        pointer-events: none;
+        visibility: hidden;
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translateX(100%);
+        transition: all .5s ease-in;
+    }
+
+    .header__nav-menu-open .header__nav {
+        transform: translateX(0);
+        
+        /* Restore the nav user's utilities: tab focus and screen reader */
+        pointer-events: auto;
+        visibility: visible;
+    }
+
+    .header__nav-list {
+        flex-direction: column;
+        gap: 4.8rem;
+    }
+
+    .header__link:link,
+    .header__link:visited {
+       font-size: 3rem;
+    }
+
+    /* **** alt nav menu style adjustments **** */
+
+    /* .header__menu-button {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    } */
+
+    .header__menu-button {
+        display: block;
+    }
+
+    /* **************************************** */
+
+    .header__nav-menu-open .header__menu-button-icon[name="close-outline"] {
+        display: block;
+    }
+
+    .header__nav-menu-open .header__menu-button-icon[name="menu-outline"] {
+        display: none;
+    }
+}
+
+/************************/
+/* BELOW 704px (Smaller tablets) */
+/************************/
+
+@media (max-width: 44em) {
+    .heading-secondary {
+        margin-bottom: 4.8rem;
+    }
+
+    .grid--3-columns,
+    .grid--4-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-meals__diets-list {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .section-pricing__box {
+        width: 100%;
+    }
+
+    .footer__grid-template {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .footer__logo-container,
+    .footer__address-container {
+        grid-column: span 3;
+    }
+
+    .footer__nav-container {
+        grid-column: span 2;
+        grid-row: 1;
+        margin-bottom: 3.2rem;
+    }
+}
+
+/************************/
+/* BELOW 544px (Phones) */
+/************************/
+
+@media (max-width: 34em) {
+    .button,
+    .button:link,
+    .button:visited {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .grid {
+        row-gap: 4.8rem;
+    }
+    
+    .grid--2-columns,
+    .grid--3-columns,
+    .grid--4-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .section-hero {
+        padding: 2.4rem 0 6.4rem;
+    }
+
+    .section-hero__container {
+        padding: 0 3.2rem;
+    }
+
+    .section-hero__image {
+        width: 80%;
+    }
+
+    .section-featured__logos img {
+        height: 1.2rem;
+    }
+
+    .section-how__image:nth-child(2) {
+        grid-row: 1;
+    }
+
+    .section-how__image:nth-child(6) {
+        grid-row: 5;
+    }
+
+    .section-how__image {
+        transform: translateY(2.4rem);
+    }
+
+    .section-testimonials__testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .section-testimonials__gallery {
+        gap: 1.2rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .section-call-to-action__container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-call-to-action__text-box {
+        padding: 3.2rem;
+    }
+
+    .section-call-to-action__image-box {
+        height: 32rem;
+
+        grid-row: 1;
+    }
+}

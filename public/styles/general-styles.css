@@ -1,0 +1,284 @@
+/*
+
+--- 01 Typography
+Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+Font weights (px):
+- default: 400
+- medium: 500
+- semi-bold: 600
+- bold: 700
+
+Line heights:
+- default: 1
+- small: 1.05
+- medium: 1.2
+- paragraph default: 1.6
+- large: 1.8
+
+Letter spacing:
+-0.5px
+0.75px
+
+--- 02 Colors
+Primary: 
+#e67e22
+
+Tints: 
+#fdf2e9, 
+#fae5d3
+
+Shades: 
+#cf711f, 
+#45260a
+
+Accent:
+
+Greys:
+#eee,
+#888,
+#767676 - lightest grey accessible on #fff,
+#6f6f6f - lightest grey accessible on #fdf2e9,
+#555,
+#333
+
+--- 05 Shadows
+0 2.4rem 4.8rem rgba(0, 0, 0, .075),
+0 2.4rem 4.8rem rgba(0, 0, 0, .15)
+0 3.2rem 6.4rem rgba(0, 0, 0, .06),
+
+--- 06 Border radius
+- default: 9px
+- medium: 11px
+
+--- 07 Whitespaces
+
+Spacing system (px):
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+html {
+    font-size: 62.5%;
+
+    /* Did not work properly on Safari and Edge browsers in the past - use polyfil */
+    /* scroll-behavior: smooth; */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*:focus-visible {
+    box-shadow: 0 0 0 .8rem rgba(230, 125, 34, 0.5);
+    outline: none;
+}
+
+body {
+    color: #555;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    line-height: 1;
+}
+
+
+/************************/
+/* GENERAL - REUSABLE - COMPONENTS */
+/************************/
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+    color: #333;
+    font-weight: 700;
+    letter-spacing: -0.5px; 
+}
+
+.heading-primary {
+    font-size: 5.2rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+}
+
+.subheading {
+    color: #cf711f;
+    display: block;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.75px;
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+}
+
+.button,
+.button:link,
+.button:visited {
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.6rem 3.2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.button--main:link,
+.button--main:visited {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.button--main:hover,
+.button--main:active {
+    background-color: #cf711f;
+    
+}
+
+.button--info:link,
+.button--info:visited {
+    background-color: #fff;
+    color: #555;
+}
+
+.button--info:hover,
+.button--info:active {
+    background-color: #fdf2e9;
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+.button--secondary:link,
+.button--secondary:visited {
+    background-color: #fdf2e9;
+    color: #cf711f;
+}
+
+.button--secondary:hover,
+.button--secondary:active {
+    background-color: #fff;
+    box-shadow: inset 0 0 0 3px #fdf2e9;
+}
+
+.button--form {
+    align-self: end;
+    background-color: #45260a;
+    color: #fdf2e9;
+    padding: 1.2rem;
+}
+
+.button--form:hover {
+    background-color: #fdf2e9;
+    color: #45260a;
+}
+
+.link:link,
+.link:visited {
+    border-bottom: 1px solid currentColor;
+    color: #e67e22;
+    display: inline-block;
+    padding-bottom: 3px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+    border-bottom: 1px solid transparent;
+    color: #cf711f;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 120rem; /* or 114rem */
+    padding: 0 3.2rem;
+}
+
+.grid {
+    column-gap: 6.4rem;
+    display: grid;
+    row-gap: 9.6rem;
+}
+
+.grid--2-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-columns {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-columns {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--align-v {
+    align-items: center;
+}
+
+/* Might not be future friendly to use this selector */
+/* .grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+} */
+
+.list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.list__item {
+    font-size: 1.8rem;
+    line-height: 1.2;
+
+    align-items: center;
+    display: flex;
+    gap: 1.6rem;
+}
+
+.list__item-icon {
+    color: #e67e22;
+    height: 3rem;
+    width: 3rem;
+}
+
+.margin-right-small {
+    margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+    margin-bottom: 4.8rem !important;
+}
+
+.margin-bottom-big {
+    margin-bottom: 9.6rem !important;
+}
+
+.center-text {
+    text-align: center;
+}
+
+strong {
+    font-weight: 500;
+}
